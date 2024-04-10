@@ -1,3 +1,17 @@
+import { useEffect, useState } from "react";
+
 export default function App() {
-  return <div>Odpri `src/App.jsx` in prični s pisanjem svoje aplikacije!</div>;
+  const [fact, setFact] = useState({});
+
+  async function getRandomFact() {
+    const response = await fetch("http://numbersapi.com/random?json");
+    const data = await response.json();
+    setFact(data);
+  }
+
+  useEffect(() => {
+    getRandomFact();
+  }, []);
+
+  return <p>{fact.text}</p>;
 }

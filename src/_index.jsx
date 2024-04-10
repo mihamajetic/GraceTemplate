@@ -12,7 +12,5 @@ import "./style/main.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   // Encapsulate the app in React.StrictMode to enable additional warnings
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <App />,
 );
